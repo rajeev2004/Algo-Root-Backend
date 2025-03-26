@@ -40,7 +40,7 @@ export async function register(req,res){
             throw new Error('please Try again');
         }
         const token=jwt.sign({id:userRegister.rows[0].id},key,{expiresIn:'12h'});
-        return res.status(200).json({message:'register successful',token});
+        return res.status(200).json({message:'user registered',token});
     }catch(err){
         return res.status(500).json({error:err.message});
     }
